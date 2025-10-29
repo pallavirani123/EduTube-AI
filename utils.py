@@ -9,7 +9,7 @@ SECRET_KEY = config("SECRET_KEY", default="supersecret")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
-embed_model = SentenceTransformer("sentence-transformers/paraphrase-MiniLM-L3-v2")
+embed_model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
 
 embedding_cache = {}
 
