@@ -290,3 +290,11 @@ def remove_bookmark(user_id: str, video_id: str):
     bookmarks_collection.delete_one({"user_id": user_id, "video_id": video_id})
     return {"message": "Bookmark removed"}
 
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
+
+
