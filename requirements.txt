@@ -1,0 +1,44 @@
+# -------------------
+# Backend (FastAPI)
+# -------------------
+fastapi
+uvicorn[standard]
+
+# -------------------
+# Database (MongoDB)
+# -------------------
+pymongo
+python-dotenv
+python-decouple
+
+# -------------------
+# Authentication & Security
+# -------------------
+bcrypt
+passlib[bcrypt]
+python-jose
+email-validator
+python-multipart
+jwt  # optional, but included if you use jwt directly
+
+# -------------------
+# AI / NLP
+# -------------------
+sentence-transformers
+torch
+numpy
+
+# -------------------
+# HTTP Requests & Utilities
+# -------------------
+requests
+
+# -------------------
+# Frontend (Streamlit)
+# -------------------
+streamlit
+
+# -------------------
+# Testing
+# -------------------
+pytest
