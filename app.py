@@ -134,8 +134,13 @@ else:
 
             res = requests.get(f"{BACKEND_URL}/recommend/youtube", params=params, headers=headers)
             res.raise_for_status()
-            data = res.json()
+            try:
+                data = res.json()
+            except ValueError:
+                st.error(f"Backend returned invalid JSON: {res.text[:200]}")
+                data = {}
             st.session_state.last_videos = data.get("videos", [])
+
             if data.get("next_page_token"):
                 st.session_state.page_tokens = [data.get("next_page_token")]
         except Exception as e:
@@ -175,7 +180,11 @@ else:
                st.info("Fetching a fresh random order set...")
             res = requests.get(f"{BACKEND_URL}/recommend/youtube", params=params, headers=headers)
             res.raise_for_status()
-            data = res.json()
+            try:
+                data = res.json()
+            except ValueError:
+                st.error(f"Backend returned invalid JSON: {res.text[:200]}")
+                data={}
             new_videos = data.get("videos", [])
             next_token = data.get("next_page_token")
             if next_token:
