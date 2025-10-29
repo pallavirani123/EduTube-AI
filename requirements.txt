@@ -42,3 +42,8 @@ streamlit
 # Testing
 # -------------------
 pytest
+
+
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==2.4.0+cpu
+
