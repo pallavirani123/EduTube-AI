@@ -40,7 +40,8 @@ app = FastAPI(title="EduTube AI Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://edutubeai.streamlit.app",
+                  "http://localhost:8501"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
