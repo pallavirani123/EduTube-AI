@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import streamlit.components.v1 as components
 
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = "https://edutube-ai-backend.onrender.com"
 
 # --- Page Config ---
 st.set_page_config(page_title="EduTube AI", layout="wide")
